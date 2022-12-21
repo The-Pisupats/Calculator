@@ -18,9 +18,39 @@
   font-size: 24px;
   height: 48px;
   width: 48px;
-  background-color: #424040;
+  background-color: #4f4949;
   color: white;
 }
+
+.working-area {
+  background-color: #424040;
+  color: white;
+  font-size: 36px;
+  width: 100%;
+}
+.calc-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.calc-special-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.mother-div {
+  width: 185px;
+  position: relative;
+  padding-left: 43%;
+  padding-top: 12%;
+}
+
+/*
+.calc-div {
+  width: 96px;
+  width: 48px;
+}
+*/
 
 #zero-btn {
   width: 96px;
