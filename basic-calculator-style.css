@@ -1,0 +1,27 @@
+.digit-btn {
+  font-size: 24px;
+  background-color: gray;
+  color: white;
+  height: 48px;
+  width: 48px;
+}
+
+.operator-btn {
+  font-size: 24px;
+  height: 48px;
+  width: 48px;
+  background-color: orange;
+  color: white;
+}
+
+.other-btn {
+  font-size: 24px;
+  height: 48px;
+  width: 48px;
+  background-color: #424040;
+  color: white;
+}
+
+#zero-btn {
+  width: 96px;
+}
