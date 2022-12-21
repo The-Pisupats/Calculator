@@ -27,6 +27,7 @@
   color: white;
   font-size: 36px;
   width: 100%;
+  text-align: right;
 }
 .calc-grid {
   display: grid;
