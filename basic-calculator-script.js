@@ -6,6 +6,8 @@ let firstNumber;
 let secondNumber;
 let operator;
 
+let isDotEntered = false;
+
 document.querySelector("#AC-btn").addEventListener("click", function() {
     workingAreaEle.value = "0";
 })
@@ -14,15 +16,21 @@ let allDigitBtns = document.querySelectorAll(".digit-btn");
 
 let addValueToWorkingArea = function(event){
 
+    let srcEle = event.srcElement;
+
     let valueEntered = event.srcElement.innerText;
 
     if(workingAreaEle.value == "0" && valueEntered !== "."){
         workingAreaEle.value = valueEntered;
     }else{
-        if(workingAreaEle.value.includes(".") && event.srcElement.innerText == (".")){
+        if(isDotEntered == true && event.srcElement.innerText == (".")){
             return;
         }
         workingAreaEle.value = workingAreaEle.value + valueEntered;
+    }
+
+    if(srcEle.innerText == "."){
+        isDotEntered = true;
     }
     
 }
@@ -39,8 +47,27 @@ let performOperation = function(event) {
         workingAreaEle.value = workingAreaEle.value + srcEle.innerText;
     }
 
+    if(srcEle.classList.contains("operator-btn") && srcEle.id != "negate-btn"){
+        isDotEntered = false;
+    }
+
 }
 
+/*
+
+//This needs to be revisited to allow users to type in numbers/expressions instead of pressing the buttons
+
+document.querySelector(".working-area").addEventListener("keydown", function(event){ 
+    let oldVal = workingAreaEle.value;
+    if(Number(event.key)){
+        addValueToWorkingArea(event.key);
+    }else{
+        workingAreaEle.value = oldVal;
+        return;
+    }
+});
+
+*/
 for(let i = 0; i < allDigitBtns.length; i++){
     allDigitBtns[i].addEventListener("click", addValueToWorkingArea);
 }

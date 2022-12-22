@@ -29,6 +29,8 @@
   width: 100%;
   height: 50px;
   text-align: right;
+  word-break: break-word;
+  word-wrap: break-word;
 }
 .calc-grid {
   display: grid;
